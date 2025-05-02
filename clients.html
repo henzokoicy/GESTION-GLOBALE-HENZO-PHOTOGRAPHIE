@@ -8,43 +8,53 @@
 </head>
 <body>
 
-    <div >
+    <div>
         <h2>Nouveau client</h2>
         <form id="formulaire_add_clients">
-          <label for="nom" >Nom et prénoms :</label><br>
-          <input type="text" id="nom" name="nom"  placeholder="Ex : Henzo koicy" required><br><br>
-    <div class="sexe">  
- <label>sexe :</label><br>
-    <input type="radio" id="homme" name="sexe" value="homme"required>
-<label for="homme">Homme</label>
-    <input type="radio" id="femme" name="sexe" value="femme"required>
-<label for="femme">Femme</label><br><br>
-</div>    
-<label for="ville">Ville :</label> 
-<input type="text" id="ville" name="ville" placeholder="Ex : Bouaké"><br><br>
-    
-          <label for="note">Description du client :</label><br>
-          <textarea name="note" id="note"></textarea><br><br>
-    
-          <button type="submit">Enregistrer</button>
-        </form>
+            <label for="nom">Nom et prénoms :</label><br>
+            <input type="text" id="nom" name="nom" placeholder="Ex : Henzo Koicy" required><br><br>
         
+            <div class="sexe">
+                <label>Sexe :</label><br>
+                <input type="radio" id="homme" name="sexe" value="homme" required>
+                <label for="homme">Homme</label>
+                <input type="radio" id="femme" name="sexe" value="femme" required>
+                <label for="femme">Femme</label><br><br>
+            </div>
+            
+            <label for="telephone">Numéro de téléphone :</label><br>
+            <select name="indicatif" id="indicatif" required>
+                <option value="+225">+225 🇨🇮</option>
+                <option value="+33">+33 🇫🇷</option>
+                <option value="+1">+1 🇺🇸</option>
+                <!-- Ajoute d'autres indicatifs si besoin -->
+            </select>
+            <input type="tel" id="telephone" name="telephone" placeholder="Numéro sans indicatif" required><br><br>
 
+            <label for="ville">Ville :</label> 
+            <input type="text" id="ville" name="ville" placeholder="Ex : Bouaké"><br><br>
+        
+            <label for="note">Description du client :</label><br>
+            <textarea name="note" id="note"></textarea><br><br>
+        
+            <button type="submit">Enregistrer</button>
+        </form>
     </div>
+
     <div id="liste-clients">
         <h2>Liste des clients</h2>
         <ul id="clients"></ul>
-      </div>
-      
-   
+    </div>
+    
     <footer>
         <p>&copy; 2025 Henzo Photographie. Tous droits réservés.</p>
     </footer>
-    <!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
 
-<!-- lien fichier JavaScript -->
-<script src="script_clients.js" defer></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+    <!-- Lien fichier JavaScript -->
+    <script src="script_clients.js" defer></script>
 </body>
 </html>
