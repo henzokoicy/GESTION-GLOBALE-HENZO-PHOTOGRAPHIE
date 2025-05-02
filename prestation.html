@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des services</title>
+   <link rel="stylesheet" href="Style_prestation.css">
+</head>
+<body>
+
+   
+    <div >
+        <h2>Reservations</h2>
+        <form id="formulaire_add_reservation" >
+          <label for="servicesname" >Type de prestation :</label><br>
+          <input type="text" name="servicesname" id="servicesname" placeholder="Ex : Mariage" required><br><br>
+    
+          <label for="Prix">Montant :</label><br>
+          <input type="number" name="Prix" id="prix" placeholder="Entrez le Montant" required><br><br>
+          <label for="devise">Devise :</label>
+          <select name="devise" id="devise">
+            <option value="XOF">XOF (Franc CFA)</option>
+            <option value="EURO">EURO (€)</option>
+            <option value="USD">USD ($)</option>
+          </select><br><br>
+    
+          <label for="note">Description du service :</label><br>
+          <textarea name="note" id="note"></textarea><br><br>
+    
+          <button type="submit">Enregistrer</button>
+        </form>
+      
+    </div>
+  </div>
+  <div id="liste-reservation">
+      <h2>Liste des Reservations</h2>
+      <ul id="reservations"></ul>
+    </div>
+
+    <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<!-- lien fichier JavaScript -->
+<script src="script_prestation.js" defer></script>
+
+   
+
+</body>
+</html>

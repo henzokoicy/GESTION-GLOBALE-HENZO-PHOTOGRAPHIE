@@ -1,0 +1,86 @@
+/* Style global */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* Conteneur principal */
+div {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+/* Titres */
+h2 {
+    color: #2b7a78;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Champs de formulaire */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Bouton */
+button {
+    background-color: #2b7a78;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #205e5d;
+}
+
+/* Radios pour le sexe */
+.sexe {
+    margin-top: 10px;
+}
+
+.sexe label {
+    margin-right: 15px;
+}
+
+/* Liste des clients */
+#liste-clients ul {
+    list-style: none;
+    padding: 0;
+}
+
+#liste-clients li {
+    background-color: #e0f2f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #2b7a78;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}

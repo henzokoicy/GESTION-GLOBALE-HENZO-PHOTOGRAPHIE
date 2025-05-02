@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henzo Photographie - Gestion de rendez-vous</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Henzo Photographie</h1>
+        <p class="tagline">Gestion professionnelle de vos rendez-vous photo</p>
+    </header>
+    
+    <form id="rendezvousForm">
+        <div class="form-section">
+            <h3><i class="fas fa-user"></i> Informations du client</h3>
+            <div class="entry">
+                <label for="nom">Nom du client*</label>
+                <input type="text" name="nom" id="nom" placeholder="Entrez le nom du client" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="typeclient">Type de client*:</label>
+                    <select name="typeclient" id="typeclient" required>
+                        <option value="Adulte">Adulte</option>
+                        <option value="Enfant">Enfant</option>
+                        <option value="Famille">Famille</option>
+                        <option value="Couple">Couple</option>
+                    </select>
+                </div>
+                
+                <div class="form-column">
+                    <fieldset>
+                        <legend>Sexe</legend>
+                        <label for="homme">
+                            <input type="radio" id="homme" name="Sexe" value="homme" checked>
+                            Homme
+                        </label>
+                        <label for="femme">
+                            <input type="radio" id="femme" name="Sexe" value="femme">
+                            Femme
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+            
+            <div class="numero">
+                <label for="pays">Sélectionner l'indicatif</label>
+                <select id="pays" name="pays">
+                    <option value="+225">Côte d'Ivoire (+225)</option>
+                    <option value="+33">France (+33)</option>
+                    <option value="+1">États-Unis/Canada (+1)</option>
+                </select>
+                
+                <label for="numero">Numéro de téléphone*</label>
+                <input type="tel" id="numero" name="numero" placeholder="Entrez le numéro du client" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="city">Ville du client*:</label>
+                    <select name="city" id="city" required>
+                        <option value="bouake">Bouaké</option>
+                        <option value="abidjan">Abidjan</option>
+                        <option value="bonoua">Bonoua</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h3><i class="fas fa-calendar-alt"></i> Détails du rendez-vous</h3>
+            <label for="date">Date de rendez-vous*</label>
+            <input type="datetime-local" id="date" name="date" required>
+            
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="services">Type de service*:</label>
+                    <select name="services" id="services" required>
+                        <option value="studio">Studio</option>
+                        <option value="exterieur">Extérieur</option>
+                        <option value="mariage">Mariage</option>
+                        <option value="dot">Dot</option>
+                        <option value="evenements">Événements</option>
+                    </select>
+                </div>
+                
+                <div class="form-column">
+                    <label for="nombresphotos">Nombre de photos*:</label>
+                    <select name="nombresphotos" id="nombresphotos" required>
+                        <script>
+                        for(let i=1; i<=300; i++) {
+                            document.write('<option value="' + i + '">' + i + '</option>');
+                        }
+                        document.write("<option value='tous'>Tout l'événement</option>");
+                        </script>
+                    </select>
+                </div>
+            </div>
+            
+            <label>Options supplémentaires:</label>
+            <div class="options-container">
+                <div class="option-item">
+                    <input type="checkbox" id="option" name="option">
+                    <label for="option">Option vidéo</label>
+                </div>
+                <div class="option-item">
+                    <input type="checkbox" id="Cadre" name="Cadre">
+                    <label for="Cadre">Cadre photo</label>
+                </div>
+                <div class="option-item">
+                    <input type="checkbox" id="numerique" name="numerique">
+                    <label for="numerique">Numérique</label>
+                </div>
+                <div class="option-item">
+                    <input type="checkbox" id="usb" name="usb">
+                    <label for="usb">Livré sur clé USB</label>
+                </div>
+            </div>
+            
+            <label for="description">Description (notes supplémentaires)</label>
+            <textarea name="description" id="description" placeholder="Exemple : le client souhaite des photos en noir et blanc."></textarea>
+            
+            <label for="montant">Montant en FCFA*:</label>
+            <input type="number" id="montant" name="montant" placeholder="Entrez le montant" required>
+        </div>
+        
+        <button type="submit" id="submitBtn"><i class="fas fa-save"></i> Enregistrer le rendez-vous</button>
+        <button type="reset" id="resetBtn"><i class="fas fa-undo"></i> Réinitialiser</button>
+    </form>
+    
+    <section id="storageSection">
+        <div class="storage-header">
+            <h2><i class="fas fa-list"></i> Rendez-vous enregistrés</h2>
+            <div class="counter-badge">
+                <span id="rendezVousCounter">0</span> rendez-vous
+            </div>
+            <button id="deleteAllBtn" class="delete-all-btn"><i class="fas fa-trash-alt"></i> Supprimer tous</button>
+        </div>
+        <div id="entriesContainer"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Henzo Photographie. Tous droits réservés.</p>
+    </footer>
+    
+    <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<!-- lien fichier JavaScript -->
+<script src="script.js" defer></script>
+</body>
+</html>

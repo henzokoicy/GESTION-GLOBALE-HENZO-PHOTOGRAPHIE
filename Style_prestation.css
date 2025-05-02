@@ -1,0 +1,74 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Conteneur principal */
+div {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres */
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Champs de formulaire */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Bouton */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b7a78;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #205e5d;
+}
+
+/* Liste des réservations */
+#liste-reservation ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#liste-reservation li {
+  background-color: #e6f2f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #2b7a78;
+  border-radius: 4px;
+  font-size: 16px;
+}
